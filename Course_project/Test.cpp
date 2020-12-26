@@ -196,7 +196,7 @@ void TestSystem::showResults(Student stud)
 	}
 }
 
-bool TestSystem::getStudentsData()
+bool TestSystem::getStudentsData(vector<Student>& stud)
 {
 	string temp;
 	ifstream fin;
@@ -239,14 +239,14 @@ bool TestSystem::getStudentsData()
 	return 1;
 }
 
-void TestSystem::workWithStudentAccess()
+void TestSystem::workWithStudentAccess(vector<Student>& stud)
 {
 	bool fl = 0,k=0,t=0,l=0;
 	while (!fl)
 	{
 		k = 0, t = 0, l = 0;
 		system("cls");
-		PrintStudetData();
+		PrintStudetData(stud);
 		cout << "1.Изменить доступ пользователю" << endl;
 		cout << "2.Назад" << endl;
 		int c;
@@ -307,7 +307,7 @@ void TestSystem::workWithStudentAccess()
 	}
 }
 
-void TestSystem::PrintStudetData()
+void TestSystem::PrintStudetData(vector<Student>& stud)
 {
 	cout << right << setw(7) << "Номер|" << right <<setw(28)<< "Студент|" << right << setw(30) << "1.Основы С++|" << right << setw(30) << "2.ООП|" << right << setw(30) << "3.STL-библиотека|" << endl;
 	for (int i = 0; i < stud.size(); i++)

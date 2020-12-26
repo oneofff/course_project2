@@ -267,8 +267,9 @@ int main()
 					case 1:
 					{
 						TestSystem sys;
-						sys.getStudentsData();
-						sys.workWithStudentAccess();
+						vector<Student> stud;
+						sys.getStudentsData(stud);
+						sys.workWithStudentAccess(stud);
 					}
 					case 2:
 					{

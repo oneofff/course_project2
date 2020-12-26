@@ -44,10 +44,9 @@ public:
 	}
 	bool outStudentfin(Student);
 	void showResults(Student);
-	bool getStudentsData();
-	void workWithStudentAccess();
-	void PrintStudetData();
+	bool getStudentsData(vector<Student>& stud);
+	void workWithStudentAccess(vector<Student>& stud);
+	void PrintStudetData(vector<Student>& stud);
 private:
-	vector<Student> stud;
 	int countOfTests;
 };
