@@ -241,7 +241,7 @@ bool TestSystem::getStudentsData(vector<Student>& stud)
 
 void TestSystem::workWithStudentAccess(vector<Student>& stud)
 {
-	bool fl = 0,k=0,t=0,l=0;
+	bool fl = 0, k = 0, t = 0, l = 0;
 	while (!fl)
 	{
 		k = 0, t = 0, l = 0;
@@ -309,7 +309,8 @@ void TestSystem::workWithStudentAccess(vector<Student>& stud)
 
 void TestSystem::PrintStudetData(vector<Student>& stud)
 {
-	cout << right << setw(7) << "Номер|" << right <<setw(28)<< "Студент|" << right << setw(30) << "1.Основы С++|" << right << setw(30) << "2.ООП|" << right << setw(30) << "3.STL-библиотека|" << endl;
+	cout << right << setw(7) << "Номер|" << right << setw(28) << "Студент|" << right << setw(30) << "1.Основы С++|" << right << setw(30) << "2.ООП|" << right << setw(30) << "3.STL-библиотека|" << endl;
+	cout << "-----------------------------------------------------------------------------------------------------------------------------" << endl;
 	for (int i = 0; i < stud.size(); i++)
 	{
 		vector<string> mark;
@@ -324,8 +325,8 @@ void TestSystem::PrintStudetData(vector<Student>& stud)
 				mark.push_back(to_string(stud[i].marks[j]));
 			}
 		}
-		
-		string name = stud[i].name +" "+ stud[i].surname + " " + stud[i].group + "|";
+
+		string name = stud[i].name + " " + stud[i].surname + " " + stud[i].group + "|";
 		string num = to_string(i + 1) + ".|";
 		string access[3];
 		for (int j = 0; j < stud[i].access.size(); j++)
@@ -347,8 +348,8 @@ void TestSystem::PrintStudetData(vector<Student>& stud)
 		string mark1 = "Оценка: " + mark[1] + "|";
 		string mark2 = "Оценка: " + mark[2] + "|";
 		cout << right << setw(7) << num << right << setw(28) << name <<
-			right << setw(30) << access0 << right << setw(30) << access1  << right << setw(30)<< access2 << endl <<
-			setw(7)<<"|"<< setw(28) << "|" << setw(30) << right << mark0 << right << setw(30) << mark1 << right << setw(30) << mark2 << endl;
+			right << setw(30) << access0 << right << setw(30) << access1 << right << setw(30) << access2 << endl <<
+			setw(7) << "|" << setw(28) << "|" << setw(30) << right << mark0 << right << setw(30) << mark1 << right << setw(30) << mark2 << endl;
 		cout << "-----------------------------------------------------------------------------------------------------------------------------" << endl;
 		/*cout << i + 1 << ".Cтудент: " << stud[i].name << " " << stud[i].surname << " " << stud[i].group << endl << endl;
 		cout << "1.Основы С++:\nОценка: " << mark[0] << "\nДоступ:" << boolalpha << stud[i].access[0] << endl << endl;
@@ -357,3 +358,140 @@ void TestSystem::PrintStudetData(vector<Student>& stud)
 		cout << "----------------------------------------------------" << endl << endl;*/
 	}
 }
+
+void TestSystem::workWithStudentData(vector<Student> stud)
+{
+	int  k = 0, t = 0, l = 0, c = 0;
+	while (true)
+	{
+		k = 0, t = 0, l = 0;
+		system("cls");
+		PrintStudetData(stud);
+		cout << "1.Поиск" << endl;
+		cout << "2.Сортировка" << endl;
+		cout << "3.Назад" << endl;		
+		while (!k)
+		{
+			cin >> c;
+			if (c == 1)
+			{
+				while (!t)
+				{
+					cout << "1.Поиск по группе" << endl;
+					cout << "2.Поиск по имени,фамилии" << endl;
+					cout << "3.Назад" << endl;
+					int num;
+					cin >> num;
+					if (num > 0 && num <= 3)
+					{
+						while (!l)
+						{
+							if (num == 1)
+							{
+								cout << "Введите номер группы" << endl;
+								string group;
+								cin >> group;
+								vector<Student> temp;
+								search(stud, temp, group);
+								if (temp.size() != 0)
+								{									
+									system("cls");
+									cout << "Студенты группы: " << group << endl << endl;
+									PrintStudetData(temp);
+									system("pause");
+									k = 1, l = 1, t = 1;
+								}
+								else
+								{
+									system("cls");
+									cout << "Студенты группы: " << group << " не найдены!" << endl;
+									system("pause");
+								}
+							}
+							else if (num == 2)
+							{
+								cout << "Введите имя" << endl;
+								string name, surname;
+								cin >> name;
+								cout << "Введите фамилию" << endl;
+								cin >> surname;
+								vector<Student> temp;
+								search(stud,temp, name, surname);
+								if (temp.size() != 0)
+								{
+									system("cls");
+									PrintStudetData(temp);
+									system("pause");
+								}
+								else
+								{
+									system("cls");
+									cout << "Студент: " << name << " " << surname << " не найден!" << endl;
+									system("pause");
+								}
+								k = 1, l = 1, t = 1;
+							}
+							else if (num == 3)
+							{
+								k = 1, l = 1, t = 1;
+							}
+							else
+							{
+								cin.clear();
+								cin.ignore(1048, '\n');
+								cout << "Ошибка, введите корректное значение" << endl;
+							}
+						}
+					}
+					else
+					{
+						cin.clear();
+						cin.ignore(1048, '\n');
+						cout << "Ошибка, введите корректное значение" << endl;
+					}
+				}
+			}
+			else if (c == 2)
+			{		
+				break;
+			}
+			else if (c == 3)
+			{
+				return;
+			}
+			else
+			{
+				cin.clear();
+				cin.ignore(1048, '\n');
+				cout << "Ошибка, введите 1 или 2" << endl;
+			}
+		}
+	}
+}
+
+void TestSystem::search(vector<Student> stud, vector<Student>& result, string group)
+{
+	for (int i = 0; i < stud.size(); i++)
+	{
+		if (stud[i].group == group)
+		{
+			result.push_back(stud[i]);
+		}
+	}
+
+}
+
+void TestSystem::search(vector<Student> stud, vector<Student>& result, string name, string surname)
+{
+	vector<Student> searchItems;
+	for (int i = 0; i < stud.size(); i++)
+	{
+		if (stud[i].name == name && stud[i].surname == surname)
+		{
+			result.push_back(stud[i]);
+		}
+	}
+	
+}
+
+

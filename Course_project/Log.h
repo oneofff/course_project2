@@ -14,6 +14,7 @@ using namespace std;
 #define pathStudentData "Studentdata.txt"
 #define pathCountTest "counttest.txt"
 #define pathReportStudent "StudentReport.txt"
+#define pathReportTeacher "TeacherReport.txt"
 namespace Crypt
 {
 	string Encrypt(string pass);

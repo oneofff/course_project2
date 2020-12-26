@@ -47,6 +47,9 @@ public:
 	bool getStudentsData(vector<Student>& stud);
 	void workWithStudentAccess(vector<Student>& stud);
 	void PrintStudetData(vector<Student>& stud);
+	void workWithStudentData(vector<Student> stud);
+	void search(vector<Student> stud, vector<Student>& result, string group);
+	void search(vector<Student> stud, vector<Student>& result, string name, string surname);
 private:
 	int countOfTests;
 };

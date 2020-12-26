@@ -262,18 +262,19 @@ int main()
 				{
 					system("cls");
 					c = teachmenu.choiceMenu("Teacher");
+					TestSystem sys;
+					vector<Student> stud;
+					sys.getStudentsData(stud);
 					switch (c)
 					{
 					case 1:
 					{
-						TestSystem sys;
-						vector<Student> stud;
-						sys.getStudentsData(stud);
 						sys.workWithStudentAccess(stud);
+						break;
 					}
 					case 2:
 					{
-				
+						sys.workWithStudentData(stud);
 						break;
 					}
 					case 3: break;
