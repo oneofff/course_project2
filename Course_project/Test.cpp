@@ -1,5 +1,6 @@
 #include "Test.h"
 
+
 Test::Test(int numberOfTest)
 {
 
@@ -369,7 +370,7 @@ void TestSystem::workWithStudentData(vector<Student> stud)
 		PrintStudetData(stud);
 		cout << "1.Поиск" << endl;
 		cout << "2.Сортировка" << endl;
-		cout << "3.Назад" << endl;		
+		cout << "3.Назад" << endl;
 		while (!k)
 		{
 			cin >> c;
@@ -394,7 +395,7 @@ void TestSystem::workWithStudentData(vector<Student> stud)
 								vector<Student> temp;
 								search(stud, temp, group);
 								if (temp.size() != 0)
-								{									
+								{
 									system("cls");
 									cout << "Студенты группы: " << group << endl << endl;
 									PrintStudetData(temp);
@@ -416,7 +417,7 @@ void TestSystem::workWithStudentData(vector<Student> stud)
 								cout << "Введите фамилию" << endl;
 								cin >> surname;
 								vector<Student> temp;
-								search(stud,temp, name, surname);
+								search(stud, temp, name, surname);
 								if (temp.size() != 0)
 								{
 									system("cls");
@@ -452,8 +453,68 @@ void TestSystem::workWithStudentData(vector<Student> stud)
 				}
 			}
 			else if (c == 2)
-			{		
-				break;
+			{
+				while (!t)
+				{
+					cout << "1.Сортировка по группе" << endl;
+					cout << "2.Сортировка по фамилии" << endl;
+					cout << "3.Назад" << endl;
+					int num;
+					cin >> num;
+					if (num > 0 && num <= 3)
+					{
+						while (!l)
+						{
+							if (num == 1)
+							{
+
+								for (int i = 0; i < stud.size(); i++)
+								{
+									for (int j = 0; j < i; j++)
+									{
+
+										if (stud[j].group > stud[j + 1].group)
+										{
+											Student temp = stud[j];
+											stud[j] = stud[j + 1];
+											stud[j + 1] = temp;
+										}
+									}
+								}
+								k = 1, l = 1, t = 1;
+							}
+
+							else if (num == 2)
+							{
+								for (int i = 0; i < stud.size(); i++)
+								{
+									for (int j = 0; j < i; j++)
+									{
+
+										if (stud[j].surname > stud[j + 1].surname)
+										{
+											Student temp = stud[j];
+											stud[j] = stud[j + 1];
+											stud[j + 1] = temp;
+										}
+									}
+								}
+								k = 1, l = 1, t = 1;
+							}
+							else if (num == 3)
+							{
+								k = 1, l = 1, t = 1;
+							}
+							else
+							{
+								cin.clear();
+								cin.ignore(1048, '\n');
+								cout << "Ошибка, введите корректное значение" << endl;
+							}
+						}
+
+					}
+				}
 			}
 			else if (c == 3)
 			{
@@ -464,9 +525,11 @@ void TestSystem::workWithStudentData(vector<Student> stud)
 				cin.clear();
 				cin.ignore(1048, '\n');
 				cout << "Ошибка, введите 1 или 2" << endl;
+
 			}
 		}
 	}
+
 }
 
 void TestSystem::search(vector<Student> stud, vector<Student>& result, string group)
@@ -491,7 +554,7 @@ void TestSystem::search(vector<Student> stud, vector<Student>& result, string na
 			result.push_back(stud[i]);
 		}
 	}
-	
+
 }
 
 

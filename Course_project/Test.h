@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <algorithm>
 #include "conio.h"
 #include "Menu.h"
 #include "Log.h"
@@ -50,6 +51,7 @@ public:
 	void workWithStudentData(vector<Student> stud);
 	void search(vector<Student> stud, vector<Student>& result, string group);
 	void search(vector<Student> stud, vector<Student>& result, string name, string surname);
+	
 private:
 	int countOfTests;
 };
