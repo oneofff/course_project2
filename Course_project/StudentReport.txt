@@ -1,4 +1,4 @@
-					Студент: Kirill Albrt 7896
+					Студент: Kirill Lodalkin 896303
 Основы С++:
 Оценка: 10
 Доступ:false

@@ -149,6 +149,9 @@
     <ClInclude Include="Test.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="1.txt" />
+    <Text Include="2.txt" />
+    <Text Include="3.txt" />
     <Text Include="Student.txt" />
     <Text Include="Studentdata.txt" />
     <Text Include="StudentReport.txt" />

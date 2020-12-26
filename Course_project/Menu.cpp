@@ -1,6 +1,5 @@
 #include "Menu.h"
 
-
 int LogMenu::choiceMenu(string s)
 {
 	system("cls");
@@ -59,6 +58,7 @@ int TeacherMenu::choiceMenu(string s)
 
 	}
 }
+
 int StudentMenu::choiceMenu(string s)
 {
 	system("cls");
@@ -87,6 +87,7 @@ int StudentMenu::choiceMenu(string s)
 
 	}
 }
+
 int TestMenu::choiceMenu(string s)
 {
 	system("cls");
@@ -116,5 +117,3 @@ int TestMenu::choiceMenu(string s)
 
 	}
 }
-
-

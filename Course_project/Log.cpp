@@ -41,7 +41,7 @@ void Teacher::setpass(string pass)
 
 namespace Crypt
 {
-	string Encrypt(string pass)
+	string Encrypt(string& pass)
 	{
 		for (int i = 0; i < pass.size(); i++)
 		{
@@ -49,7 +49,7 @@ namespace Crypt
 		}
 		return pass;
 	}
-	string Decrypt(string pass)
+	string Decrypt(string& pass)
 	{
 		for (int i = 0; i < pass.size(); i++)
 		{
@@ -262,17 +262,19 @@ int main()
 				{
 					system("cls");
 					c = teachmenu.choiceMenu("Teacher");
+					TestSystem sys;
+					vector<Student> stud;
+					sys.getStudentsData(stud);
 					switch (c)
 					{
 					case 1:
 					{
-						TestSystem sys;
-						sys.getStudentsData();
-						sys.workWithStudentAccess();
+						sys.workWithStudentAccess(stud);
+						break;
 					}
 					case 2:
 					{
-				
+						sys.workWithStudentData(stud);
 						break;
 					}
 					case 3: break;
