@@ -14,16 +14,15 @@ using namespace std;
 #define pathStudentData "Studentdata.txt"
 #define pathCountTest "counttest.txt"
 #define pathReportStudent "StudentReport.txt"
+#define pathReportTeacher "TeacherReport.txt"
 namespace Crypt
 {
-	string Encrypt(string pass);
-	string Decrypt(string pass);
+	string Encrypt(string& pass);
+	string Decrypt(string& pass);
 }
 class User
 {
 public:
-	virtual void result() = 0;
-	virtual void startTest() = 0;
 	virtual string getlog() = 0;
 	virtual void setlog(string) = 0;
 	virtual string getpass() = 0;
@@ -35,8 +34,6 @@ class Student : public User
 {
 public:
 	Student(string log = " ", string pass = " ", string name = " ", string surname = " ", string group = " ",int countOfTest=3,int*p=nullptr,int* p2= nullptr);
-	void result() {};
-	void startTest() {};
 	string getlog();
 	void setlog(string);
 	string getpass();
@@ -53,11 +50,6 @@ private:
 class Teacher : public User
 {
 public:
-	void result() {};
-	void startTest()
-	{
-
-	};
 	string getlog();
 	void setlog(string log);
 	string getpass();
@@ -67,6 +59,7 @@ public:
 private:
 	string log, pass;
 };
+
 
 
 int getCountOfTest();
