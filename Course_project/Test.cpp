@@ -407,6 +407,7 @@ void TestSystem::workWithStudentData(vector<Student> stud)
 									system("cls");
 									cout << "Студенты группы: " << group << " не найдены!" << endl;
 									system("pause");
+									k = 1, l = 1, t = 1;
 								}
 							}
 							else if (num == 2)
