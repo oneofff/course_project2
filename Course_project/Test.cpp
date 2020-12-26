@@ -556,5 +556,3 @@ void TestSystem::search(vector<Student> stud, vector<Student>& result, string na
 	}
 
 }
-
-

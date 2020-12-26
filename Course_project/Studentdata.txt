@@ -1,10 +1,10 @@
 user
-Stanilav Korol 973603 0 1 1 -1 -1 -1
+Stanislav Korol 973603 0 0 0 9 10 10
 artem
 Artem Galkin 873603 1 1 1 -1 -1 -1
 user2
-Kirill Albrt 7896 0 1 0 7 -1 -1
+Kirill Kuznetov 7896 1 1 0 7 -1 -1
 user3
-a a d 1 1 1 7 -1 -1
-zvbb
-qe21 asd231 313 1 1 1 -1 -1 -1
+Kirill Lodalkin 896303 0 1 1 10 -1 -1
+stas
+Illa Savateev 973603 1 1 1 -1 -1 -1

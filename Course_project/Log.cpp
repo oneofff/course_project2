@@ -41,7 +41,7 @@ void Teacher::setpass(string pass)
 
 namespace Crypt
 {
-	string Encrypt(string pass)
+	string Encrypt(string& pass)
 	{
 		for (int i = 0; i < pass.size(); i++)
 		{
@@ -49,7 +49,7 @@ namespace Crypt
 		}
 		return pass;
 	}
-	string Decrypt(string pass)
+	string Decrypt(string& pass)
 	{
 		for (int i = 0; i < pass.size(); i++)
 		{
