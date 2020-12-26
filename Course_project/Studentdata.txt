@@ -1,0 +1,8 @@
+user
+Stanilav Korol 973603 0 0 1 -1 -1 -1
+artem
+Artem Galkin 873603 0 1 1 -1 -1 -1
+user2
+Kirill Albrt 7896 0 1 0 7 -1 -1
+user3
+a a d 1 0 1 7 -1 -1
